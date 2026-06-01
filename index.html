@@ -353,6 +353,232 @@ background:#111827;
 padding:25px;
 border-radius:15px;
 }
+
+  .search-box{
+background:#111827;
+max-width:1200px;
+margin:-120px auto 60px;
+padding:30px;
+border-radius:20px;
+position:relative;
+z-index:10;
+box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+.search-tabs{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.search-tabs button{
+background:#0f172a;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.search-tabs .active{
+border-bottom:3px solid #3b82f6;
+}
+
+.stay-tabs{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.stay-tabs button{
+background:#111827;
+border:1px solid #3b82f6;
+color:white;
+padding:10px 18px;
+border-radius:30px;
+}
+
+.main-search{
+width:100%;
+padding:18px;
+background:#0f172a;
+border:1px solid #333;
+color:white;
+border-radius:10px;
+margin-bottom:20px;
+font-size:16px;
+}
+
+.search-row{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:20px;
+}
+
+.search-item{
+background:#0f172a;
+padding:18px;
+border:1px solid #333;
+border-radius:10px;
+}
+
+.label{
+font-size:12px;
+color:#888;
+}
+
+.value{
+font-size:18px;
+font-weight:bold;
+margin-top:5px;
+}
+
+.sub{
+font-size:13px;
+color:#aaa;
+}
+
+.check-home{
+display:block;
+margin-bottom:20px;
+}
+
+.add-flight{
+color:#3b82f6;
+margin-bottom:25px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.big-search-btn{
+display:block;
+width:400px;
+max-width:100%;
+margin:auto;
+padding:18px;
+background:#2563eb;
+border:none;
+border-radius:999px;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+.search-box{
+background:#111827;
+max-width:1200px;
+margin:-120px auto 60px;
+padding:30px;
+border-radius:20px;
+position:relative;
+z-index:10;
+box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+.search-tabs{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.search-tabs button{
+background:#0f172a;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.search-tabs .active{
+border-bottom:3px solid #3b82f6;
+}
+
+.stay-tabs{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.stay-tabs button{
+background:#111827;
+border:1px solid #3b82f6;
+color:white;
+padding:10px 18px;
+border-radius:30px;
+}
+
+.main-search{
+width:100%;
+padding:18px;
+background:#0f172a;
+border:1px solid #333;
+color:white;
+border-radius:10px;
+margin-bottom:20px;
+font-size:16px;
+}
+
+.search-row{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:20px;
+}
+
+.search-item{
+background:#0f172a;
+padding:18px;
+border:1px solid #333;
+border-radius:10px;
+}
+
+.label{
+font-size:12px;
+color:#888;
+}
+
+.value{
+font-size:18px;
+font-weight:bold;
+margin-top:5px;
+}
+
+.sub{
+font-size:13px;
+color:#aaa;
+}
+
+.check-home{
+display:block;
+margin-bottom:20px;
+}
+
+.add-flight{
+color:#3b82f6;
+margin-bottom:25px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.big-search-btn{
+display:block;
+width:400px;
+max-width:100%;
+margin:auto;
+padding:18px;
+background:#2563eb;
+border:none;
+border-radius:999px;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+  
 footer{
 
 background:#111827;
@@ -472,62 +698,118 @@ padding:15px 20px;
 <div class="search-box">
 
 <div class="search-tabs">
-
-<button class="active">🏨 Khách sạn + Nhà ở</button>
-
+<button class="active">🏨 Khách sạn + Nhà</button>
 <button>✈ Vé máy bay</button>
-
-<button>🏖 Hoạt động</button>
-
+<button>🏠 Chỗ nghỉ</button>
+<button>🎁 Khuyến mãi</button>
 <button>🚕 Đưa đón sân bay</button>
+</div>
+
+<div class="stay-tabs">
+<button class="active">Chỗ ở qua đêm</button>
+<button>Chỗ ở trong ngày</button>
+</div>
+
+<input
+type="text"
+class="main-search"
+placeholder="Nhập điểm du lịch hoặc tên khách sạn">
+
+<div class="search-row">
+
+<div class="search-item">
+<div class="label">Nhận phòng</div>
+<div class="value">10 Tháng 6 2026</div>
+<div class="sub">Thứ Tư</div>
+</div>
+
+<div class="search-item">
+<div class="label">Trả phòng</div>
+<div class="value">11 Tháng 6 2026</div>
+<div class="sub">Thứ Năm</div>
+</div>
+
+<div class="search-item">
+<div class="label">Khách</div>
+<div class="value">2 người lớn</div>
+<div class="sub">1 phòng</div>
+</div>
 
 </div>
 
-<div class="search-grid">
+<label class="check-home">
+<input type="checkbox">
+Chỉ hiển thị nhà nguyên căn và căn hộ
+</label>
 
-<input type="text" placeholder="Nhập điểm đến hoặc tên khách sạn">
-
-<input type="date">
-
-<input type="date">
-
-<select>
-<option>2 người lớn - 1 phòng</option>
-<option>3 người lớn - 1 phòng</option>
-<option>4 người lớn - 2 phòng</option>
-</select>
-
-<button class="search-btn">TÌM</button>
-
+<div class="add-flight">
++ Bổ sung chuyến bay
 </div>
 
-</div>
-
-<section class="section">
-<section class="section">
-
-<h2>Đặt phòng nhanh</h2>
-
-<form id="bookingForm">
-
-<input type="text" placeholder="Họ và tên">
-
-<input type="email" placeholder="Email">
-
-<input type="tel" placeholder="Số điện thoại">
-
-<select>
-<option>1 đêm</option>
-<option>2 đêm</option>
-<option>3 đêm</option>
-</select>
-
-<button type="submit">
-Đặt phòng ngay
+<button class="big-search-btn">
+TÌM
 </button>
 
-</form>
+</div>
 
+<div class="search-box">
+
+    <div class="search-tabs">
+        <button class="active">🏨 Khách sạn + Nhà</button>
+        <button>✈ Vé máy bay</button>
+        <button>🏠 Chỉ nhà</button>
+        <button>🎁 Máy bay + KS</button>
+        <button>🎡 Hoạt động</button>
+        <button>🚖 Đưa đón sân bay</button>
+    </div>
+
+    <div class="stay-tabs">
+        <button>Chỗ ở qua đêm</button>
+        <button>Chỗ ở trong ngày</button>
+    </div>
+
+    <input
+        class="main-search"
+        type="text"
+        placeholder="Nhập điểm du lịch hoặc tên khách sạn"
+    >
+
+    <div class="search-row">
+
+        <div class="search-item">
+            <div class="label">Nhận phòng</div>
+            <div class="value">10 Tháng 6 2026</div>
+            <div class="sub">Thứ Tư</div>
+        </div>
+
+        <div class="search-item">
+            <div class="label">Trả phòng</div>
+            <div class="value">11 Tháng 6 2026</div>
+            <div class="sub">Thứ Năm</div>
+        </div>
+
+        <div class="search-item">
+            <div class="label">Khách</div>
+            <div class="value">2 người lớn</div>
+            <div class="sub">1 phòng</div>
+        </div>
+
+    </div>
+
+    <label class="check-home">
+        <input type="checkbox">
+        Chỉ hiển thị nhà nguyên căn và căn hộ
+    </label>
+
+    <div class="add-flight">
+        + Bổ sung chuyến bay
+    </div>
+
+    <button class="big-search-btn">
+        TÌM
+    </button>
+
+</div>
 </section>
 <h2>Điểm đến nổi bật</h2>
 
