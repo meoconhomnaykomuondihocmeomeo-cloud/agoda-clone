@@ -3,126 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Booking Hotel</title>
+<title>Travel Booking</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
 }
 
 body{
-background:#0f172a;
-color:white;
+background:#0b0f17;
+color:#fff;
 }
 
 header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
 background:#111827;
-padding:15px 8%;
+z-index:1000;
+padding:15px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
 .logo{
-font-size:28px;
+font-size:30px;
 font-weight:bold;
-color:#3b82f6;
+color:#4ea5ff;
+}
+
+nav{
+display:flex;
+gap:25px;
 }
 
 nav a{
-color:white;
 text-decoration:none;
-margin-left:20px;
+color:white;
+font-size:15px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#4ea5ff;
 }
 
 .hero{
-height:500px;
-background:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600") center/cover;
+height:650px;
+background:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1800");
+background-size:cover;
+background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+padding-top:80px;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:20px;
-text-shadow:0 2px 10px rgba(0,0,0,.6);
-}
-
-.search-box{
-background:white;
-padding:20px;
-border-radius:15px;
-width:80%;
-max-width:1000px;
-display:flex;
-gap:10px;
-}
-
-.search-box input{
-flex:1;
-padding:15px;
-border:1px solid #ddd;
-border-radius:10px;
-}
-
-.search-box button{
-padding:15px 30px;
-background:#2563eb;
-border:none;
-color:white;
-border-radius:10px;
-cursor:pointer;
-}
-
-.section{
-padding:60px 8%;
-}
-
-.section h2{
+font-size:50px;
+text-align:center;
 margin-bottom:25px;
 }
 
-.grid{
+.hero p{
+font-size:20px;
+margin-bottom:40px;
+}
+
+.search-box{
+width:90%;
+max-width:1100px;
+background:#131b26;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.search-row{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:15px;
+}
+
+.search-row input,
+.search-row select{
+padding:16px;
+border:none;
+border-radius:10px;
+background:#1f2937;
+color:white;
+}
+
+.search-btn{
+width:100%;
+margin-top:20px;
+padding:16px;
+background:#2563eb;
+border:none;
+border-radius:12px;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+.search-btn:hover{
+background:#1d4ed8;
+}
+
+.section{
+padding:80px 5%;
+}
+
+.section-title{
+font-size:35px;
+margin-bottom:30px;
+}
+
+.destinations{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
-.card{
-background:#1e293b;
-border-radius:15px;
+.destination-card{
+background:#141c28;
+border-radius:18px;
 overflow:hidden;
+transition:.3s;
 }
 
-.card img{
+.destination-card:hover{
+transform:translateY(-8px);
+}
+
+.destination-card img{
 width:100%;
-height:180px;
+height:220px;
 object-fit:cover;
 }
 
-.card-content{
+.destination-content{
 padding:15px;
 }
 
-.card-content h3{
+.destination-content h3{
 margin-bottom:10px;
 }
 
-.price{
-color:#60a5fa;
+.hotels{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.hotel-card{
+background:#141c28;
+border-radius:18px;
+overflow:hidden;
+}
+
+.hotel-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.hotel-info{
+padding:18px;
+}
+
+.hotel-name{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.hotel-price{
+font-size:24px;
+color:#4ea5ff;
 font-weight:bold;
+margin-top:15px;
+}
+
+.hotel-btn{
+display:block;
+margin-top:15px;
+padding:12px;
+background:#2563eb;
+text-align:center;
+text-decoration:none;
+color:white;
+border-radius:10px;
+}
+
+.banner{
+background:#1d4ed8;
+padding:40px;
+text-align:center;
+border-radius:20px;
+margin-top:50px;
 }
 
 footer{
-padding:30px;
-text-align:center;
+margin-top:80px;
 background:#111827;
-margin-top:50px;
+padding:50px 5%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.footer-grid h3{
+margin-bottom:15px;
+}
+
+.footer-grid a{
+display:block;
+text-decoration:none;
+color:#ccc;
+margin-bottom:8px;
+}
+
+@media(max-width:900px){
+
+.search-row{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:35px;
+}
+
 }
 </style>
 </head>
@@ -130,101 +251,171 @@ margin-top:50px;
 <body>
 
 <header>
-<div class="logo">TravelBook</div>
+
+<div class="logo">
+TravelBook
+</div>
 
 <nav>
 <a href="#">Khách sạn</a>
 <a href="#">Vé máy bay</a>
+<a href="#">Resort</a>
 <a href="#">Khuyến mãi</a>
 <a href="#">Đăng nhập</a>
 </nav>
+
 </header>
 
 <section class="hero">
+
 <h1>Tìm nơi lưu trú lý tưởng</h1>
 
+<p>Đặt phòng nhanh chóng với giá tốt</p>
+
 <div class="search-box">
+
+<div class="search-row">
+
 <input type="text" placeholder="Bạn muốn đi đâu?">
+
 <input type="date">
+
 <input type="date">
-<button>Tìm kiếm</button>
+
+<select>
+<option>2 người lớn</option>
+<option>3 người lớn</option>
+<option>4 người lớn</option>
+</select>
+
 </div>
+
+<button class="search-btn">
+Tìm kiếm
+</button>
+
+</div>
+
 </section>
 
 <section class="section">
-<h2>Điểm đến nổi bật</h2>
 
-<div class="grid">
+<h2 class="section-title">
+Điểm đến nổi bật
+</h2>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800">
-<div class="card-content">
+<div class="destinations">
+
+<div class="destination-card">
+<img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482">
+<div class="destination-content">
 <h3>Hà Nội</h3>
 <p>10.000+ chỗ ở</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800">
-<div class="card-content">
+<div class="destination-card">
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592">
+<div class="destination-content">
 <h3>Đà Nẵng</h3>
 <p>8.500+ chỗ ở</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800">
-<div class="card-content">
+<div class="destination-card">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+<div class="destination-content">
 <h3>Nha Trang</h3>
 <p>6.300+ chỗ ở</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800">
-<div class="card-content">
+<div class="destination-card">
+<img src="https://images.unsplash.com/photo-1540541338287-41700207dee6">
+<div class="destination-content">
 <h3>Phú Quốc</h3>
-<p>4.800+ chỗ ở</p>
+<p>4.900+ chỗ ở</p>
 </div>
 </div>
 
 </div>
+
 </section>
 
 <section class="section">
-<h2>Khách sạn phổ biến</h2>
 
-<div class="grid">
+<h2 class="section-title">
+Khách sạn phổ biến
+</h2>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800">
-<div class="card-content">
-<h3>Luxury Resort</h3>
-<p class="price">1.500.000 VNĐ / đêm</p>
-</div>
-</div>
+<div class="hotels">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800">
-<div class="card-content">
-<h3>Beach Hotel</h3>
-<p class="price">1.200.000 VNĐ / đêm</p>
+<div class="hotel-card">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+<div class="hotel-info">
+<div class="hotel-name">Luxury Resort</div>
+<div>5 sao • Hồ bơi • Buffet sáng</div>
+<div class="hotel-price">1.500.000đ</div>
+<a href="#" class="hotel-btn">Đặt ngay</a>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800">
-<div class="card-content">
-<h3>Mountain View</h3>
-<p class="price">900.000 VNĐ / đêm</p>
+<div class="hotel-card">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+<div class="hotel-info">
+<div class="hotel-name">Ocean Hotel</div>
+<div>View biển • Trung tâm</div>
+<div class="hotel-price">1.200.000đ</div>
+<a href="#" class="hotel-btn">Đặt ngay</a>
+</div>
+</div>
+
+<div class="hotel-card">
+<img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c">
+<div class="hotel-info">
+<div class="hotel-name">Mountain View</div>
+<div>Yên tĩnh • Nghỉ dưỡng</div>
+<div class="hotel-price">900.000đ</div>
+<a href="#" class="hotel-btn">Đặt ngay</a>
 </div>
 </div>
 
 </div>
+
+<div class="banner">
+<h2>Giảm đến 30% cho khách hàng mới</h2>
+<p>Đăng ký tài khoản để nhận ưu đãi đặc biệt</p>
+</div>
+
 </section>
 
 <footer>
-© 2026 TravelBook
+
+<div class="footer-grid">
+
+<div>
+<h3>Công ty</h3>
+<a href="#">Giới thiệu</a>
+<a href="#">Liên hệ</a>
+<a href="#">Tuyển dụng</a>
+</div>
+
+<div>
+<h3>Hỗ trợ</h3>
+<a href="#">Trung tâm trợ giúp</a>
+<a href="#">Điều khoản</a>
+<a href="#">Chính sách</a>
+</div>
+
+<div>
+<h3>Đối tác</h3>
+<a href="#">Khách sạn</a>
+<a href="#">Doanh nghiệp</a>
+<a href="#">Affiliate</a>
+</div>
+
+</div>
+
 </footer>
 
 </body>
